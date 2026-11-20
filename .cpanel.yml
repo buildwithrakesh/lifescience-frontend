@@ -1,0 +1,8 @@
+---
+# cPanel Git Version Control -> "Deploy HEAD Commit" copies the built website into public_html.
+# This branch only holds the built site (output of "npm run build" from the main branch).
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/cp -R assets index.html robots.txt sitemap.xml firebase-messaging-sw.js favicon.ico favicon-16x16.png favicon-32x32.png favicon-192x192.png apple-touch-icon.png $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
