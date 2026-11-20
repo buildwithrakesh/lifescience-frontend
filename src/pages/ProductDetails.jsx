@@ -20,6 +20,8 @@ import ProductCard from "../components/ProductCard";
 import { useShop } from "../context/ShopContext";
 import { apiFetch, resolveImageUrl } from "../utils/api";
 import { products as snapshotProducts } from "../data/products";
+import { useSeo } from "../seo/useSeo";
+import { productSeo } from "../seo/schemas";
 
 // Fast in-memory session cache so revisiting or switching products is 0ms
 const productMemoryCache = new Map();
@@ -109,6 +111,15 @@ export default function ProductDetails({ add, onToast }) {
   const { addToCart, toggleWishlist, isInWishlist } = useShop();
   const [qty, setQty] = useState(1);
   const [activeTab, setActiveTab] = useState(tabParam);
+
+  // SEO: product title/description, canonical URL, Product (price in INR) + Breadcrumb structured data
+  useSeo(
+    notFound
+      ? { title: "Product Not Found", noindex: true, _route: location.pathname }
+      : product && product.name
+      ? { ...productSeo(product, id), _route: location.pathname }
+      : null
+  );
 
   // Sync instantly when switching between products (/product/a -> /product/b), then revalidate live DB data
   useEffect(() => {

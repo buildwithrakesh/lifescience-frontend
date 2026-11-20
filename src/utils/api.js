@@ -45,8 +45,12 @@ export async function apiFetch(endpoint, options = {}) {
   const timeoutMs = options.timeout || 45000;
 
   const token = typeof localStorage !== "undefined" ? localStorage.getItem("vetora_admin_token") : null;
+  // Speed: only declare a JSON body when one is actually sent. A plain GET without Content-Type is a
+  // CORS "simple request", so the browser no longer sends an extra OPTIONS preflight round trip to the
+  // API server before every product/offer/poster request. Requests that send a body are unchanged.
+  const hasBody = options.body !== undefined && options.body !== null;
   const headers = {
-    "Content-Type": "application/json",
+    ...(hasBody ? { "Content-Type": "application/json" } : {}),
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...(options.headers || {}),
   };

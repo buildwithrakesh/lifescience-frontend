@@ -119,7 +119,7 @@ export default function Footer() {
         </div>
         <div className="footer-col footer-contact">
           <b>Registered Office & Contact</b>
-          <span><Phone size={14}/> +91 80947 21000</span>
+          <span><Phone size={14}/> +91 80947 30645</span>
           <span><Mail size={14}/> Lifesciencepharmaceutical@gmail.com</span>
           <span style={{ display: "flex", gap: 6, alignItems: "flex-start", lineHeight: 1.4 }}>
             <MapPin size={14} style={{ flexShrink: 0, marginTop: 3 }}/>

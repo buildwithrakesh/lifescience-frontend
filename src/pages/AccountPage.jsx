@@ -76,7 +76,7 @@ export default function AccountPage({ onToast }) {
     }
     return {
       name: "Ramesh Kumar",
-      mobile: "+91 80947 21000",
+      mobile: "+91 80947 30645",
       email: "ramesh.kumar@example.com",
       farmName: "Shree Krishna Dairy & Cattle Farm"
     };
@@ -95,7 +95,7 @@ export default function AccountPage({ onToast }) {
         id: "addr-1",
         type: "Dairy Farm",
         name: "Ramesh Kumar (Farm Dispatch)",
-        phone: "+91 80947 21000",
+        phone: "+91 80947 30645",
         address: "Village Kheri, Near Cooperative Milk Chilling Center",
         landmark: "Near Veterinary Hospital",
         city: "Karnal",
@@ -107,7 +107,7 @@ export default function AccountPage({ onToast }) {
         id: "addr-2",
         type: "Home",
         name: "Ramesh Kumar",
-        phone: "+91 80947 21000",
+        phone: "+91 80947 30645",
         address: "House 42, Civil Lines",
         landmark: "Near City Park",
         city: "Karnal",

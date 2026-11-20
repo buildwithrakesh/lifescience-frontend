@@ -138,7 +138,7 @@ export default function DistributorPage({ onToast }) {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +91 80947 21000"
+                    placeholder="e.g. +91 80947 30645"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />

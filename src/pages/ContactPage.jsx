@@ -90,11 +90,11 @@ export default function ContactPage({ onToast }) {
                     </div>
                     <div>
                       <b>Toll-Free Helpline</b>
-                      <span>+91 80947 21000</span>
+                      <span>+91 80947 30645</span>
                       <small>Mon – Sat, 9:00 AM – 6:00 PM</small>
                     </div>
                   </div>
-                  <a href="tel:+918094721000" className="channel-action-btn call-btn">
+                  <a href="tel:+918094730645" className="channel-action-btn call-btn">
                     <Phone size={13} /> Call
                   </a>
                 </div>
@@ -130,7 +130,7 @@ export default function ContactPage({ onToast }) {
 
               {/* WhatsApp Fast CTA */}
               <a
-                href="https://wa.me/918094721000?text=Hello%20Life%20Science%20Team%2C%20I%20have%20a%20query%20about%20animal%20care%20products."
+                href="https://wa.me/918094730645?text=Hello%20Life%20Science%20Team%2C%20I%20have%20a%20query%20about%20animal%20care%20products."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="button button-lime whatsapp-connect-btn"
@@ -192,7 +192,7 @@ export default function ContactPage({ onToast }) {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +91 80947 21000"
+                        placeholder="e.g. +91 80947 30645"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />

@@ -65,7 +65,7 @@ export default function ShippingReturnsPage() {
           <ol>
             <li>Inspect the package immediately upon delivery.</li>
             <li>Take clear photographs of the damaged or leaked container, showing the bottle label and the outer shipping label.</li>
-            <li>Contact our customer support team within 48 hours of delivery at <strong>Lifesciencepharmaceutical@gmail.com</strong> or call/WhatsApp <strong>+91 80947 21000</strong>.</li>
+            <li>Contact our customer support team within 48 hours of delivery at <strong>Lifesciencepharmaceutical@gmail.com</strong> or call/WhatsApp <strong>+91 80947 30645</strong>.</li>
             <li>Provide your Order ID and attach the photos.</li>
           </ol>
           <p>
@@ -85,7 +85,7 @@ export default function ShippingReturnsPage() {
           <p>
             <strong>Life Science Pharmaceutical</strong><br />
             101, Turning Point 1st, Opposite Rosary School, Viman Nagar, Pune, Maharashtra - 411014<br />
-            Phone: +91 80947 21000 (Monday – Saturday, 9:00 AM – 6:00 PM IST)<br />
+            Phone: +91 80947 30645 (Monday – Saturday, 9:00 AM – 6:00 PM IST)<br />
             Email: Lifesciencepharmaceutical@gmail.com
           </p>
         </main>

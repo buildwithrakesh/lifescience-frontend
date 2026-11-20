@@ -130,7 +130,7 @@ export default function TermsAndConditions() {
                 <h2>Acceptance of Terms</h2>
               </div>
               <p>
-                By visiting, browsing, or purchasing products on <strong>lifesciencepharma.in</strong> (referred to as the "Website"
+                By visiting, browsing, or purchasing products on <strong>lifesciencepharmaceutical.in</strong> (referred to as the "Website"
                 or "Platform"), you agree to be legally bound by these Terms and Conditions and our Privacy Policy.
               </p>
               <p>
@@ -258,7 +258,7 @@ export default function TermsAndConditions() {
               <ul>
                 <li>
                   <strong>Cancellation:</strong> You may cancel your order at zero cost before the package has been handed over to our
-                  shipping courier by calling our helpline (+91 80947 21000) or via your Account dashboard.
+                  shipping courier by calling our helpline (+91 80947 30645) or via your Account dashboard.
                 </li>
                 <li>
                   <strong>7-Day Replacement Guarantee:</strong> If you receive a damaged bottle, leaking container, broken seal, or incorrect
@@ -322,7 +322,7 @@ export default function TermsAndConditions() {
               <div className="legal-contact-box">
                 <span><MapPin size={16} /> <strong>Corporate Office:</strong> 101, Turning Point 1st, Opposite Rosary School, Viman Nagar, Pune, Maharashtra - 411014</span>
                 <span><Mail size={16} /> <strong>Email:</strong> Lifesciencepharmaceutical@gmail.com</span>
-                <span><Phone size={16} /> <strong>Helpline:</strong> +91 80947 21000 (Monday – Saturday, 9:00 AM – 6:00 PM IST)</span>
+                <span><Phone size={16} /> <strong>Helpline:</strong> +91 80947 30645 (Monday – Saturday, 9:00 AM – 6:00 PM IST)</span>
               </div>
             </section>
           </main>

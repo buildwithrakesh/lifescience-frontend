@@ -4,9 +4,9 @@ export default function PartnerBannerSection() {
   // Hidden for client MVP review as requested (not deleted, easy to unhide)
   return null;
 
-  const phoneUrl = "tel:+918094721000";
+  const phoneUrl = "tel:+918094730645";
   const whatsappUrl =
-    "https://wa.me/918094721000?text=Hello%20Life%20Science%20Team%2C%20I%20am%20interested%20in%20partnering%20with%20you.";
+    "https://wa.me/918094730645?text=Hello%20Life%20Science%20Team%2C%20I%20am%20interested%20in%20partnering%20with%20you.";
 
   return (
     <section className="partner-banner-section" id="partner">

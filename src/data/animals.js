@@ -1,10 +1,12 @@
-import imgCow from "../assets/shopbyanimals/cow.webp";
-import imgBuffalo from "../assets/shopbyanimals/Buffalo.webp";
-import imgCock from "../assets/shopbyanimals/Cock.webp";
-import imgDog from "../assets/shopbyanimals/Dog.webp";
-import imgGoats from "../assets/shopbyanimals/Goats.webp";
-import imgSheep from "../assets/shopbyanimals/Sheep.webp";
-import imgFish from "../assets/shopbyanimals/Fish.webp";
+// Speed: these are resized copies (400px tall, ~50% smaller) of the originals in ../assets/shopbyanimals/.
+// They are displayed at most ~125px tall (348px on 3x phones), so they look identical. Originals are kept unchanged.
+import imgCow from "../assets/shopbyanimals/optimized/cow.webp";
+import imgBuffalo from "../assets/shopbyanimals/optimized/Buffalo.webp";
+import imgCock from "../assets/shopbyanimals/optimized/Cock.webp";
+import imgDog from "../assets/shopbyanimals/optimized/Dog.webp";
+import imgGoats from "../assets/shopbyanimals/optimized/Goats.webp";
+import imgSheep from "../assets/shopbyanimals/optimized/Sheep.webp";
+import imgFish from "../assets/shopbyanimals/optimized/Fish.webp";
 
 export const animals = [
   { name: "Cow",        img: imgCow,         local: true,  note: "Everyday dairy & farm care" },

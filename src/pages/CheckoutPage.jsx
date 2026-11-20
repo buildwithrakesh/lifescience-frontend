@@ -17,7 +17,7 @@ export default function CheckoutPage({ cart, clearCart, onToast }) {
   // Shipping Form State
   const [shippingData, setShippingData] = useState({
     fullName: "Ramesh Kumar",
-    mobile: "+91 80947 21000",
+    mobile: "+91 80947 30645",
     address: "Village Kheri, G.T. Road",
     city: "Karnal",
     state: "Haryana",
@@ -138,7 +138,7 @@ export default function CheckoutPage({ cart, clearCart, onToast }) {
                         required
                         value={shippingData.mobile}
                         onChange={(e) => setShippingData({ ...shippingData, mobile: e.target.value })}
-                        placeholder="e.g. +91 80947 21000"
+                        placeholder="e.g. +91 80947 30645"
                       />
                     </div>
                   </div>

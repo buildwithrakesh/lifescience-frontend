@@ -1,13 +1,19 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { Clock, User, ArrowLeft, ArrowRight, Share2, CheckCircle2, Bookmark } from "lucide-react";
 import { ARTICLES_DATA } from "./KnowledgeCentre";
 import { products } from "../data/products";
 import ProductCard from "../components/ProductCard";
+import { useSeo } from "../seo/useSeo";
+import { articleSeo } from "../seo/schemas";
 
 export default function ArticlePage({ add }) {
   const { slug } = useParams();
+  const { pathname } = useLocation();
   const article = ARTICLES_DATA.find((a) => a.slug === slug) || ARTICLES_DATA[0];
+
+  // SEO: article title/description, canonical /knowledge/<slug>, Article + Breadcrumb structured data
+  useSeo({ ...articleSeo(article), _route: pathname });
 
   const suggestedProducts = products.slice(0, 3);
 

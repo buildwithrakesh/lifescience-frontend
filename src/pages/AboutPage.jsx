@@ -205,7 +205,7 @@ export default function AboutPage() {
               Viman Nagar, Pune, Maharashtra - 411014
             </p>
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap", fontSize: "13.5px", color: "#12452c", fontWeight: 600 }}>
-              <span>📞 +91 80947 21000</span>
+              <span>📞 +91 80947 30645</span>
               <span>✉️ Lifesciencepharmaceutical@gmail.com</span>
               <span>🌐 Pune, Maharashtra, India</span>
             </div>

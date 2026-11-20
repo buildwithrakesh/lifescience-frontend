@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
+import { preloadStaticPageForPath, prefetchStaticPages } from "./staticPages.jsx";
 import "./styles.css";
 
 // Automatically clear stale catalog/banner caches & any legacy non-FCM service workers on new rollout
@@ -35,8 +36,43 @@ try {
   }
 } catch {}
 
-createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function renderApp() {
+  createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+// Speed: info pages (About, FAQ, Policies, ...) are code-split. If the visitor lands directly on one of
+// them, wait for that small chunk before the first render so the page still appears in one go
+// (never wait longer than 3s; after that the normal loading placeholder is used).
+let hasRendered = false;
+const renderOnce = () => {
+  if (hasRendered) return;
+  hasRendered = true;
+  renderApp();
+};
+const firstPageChunk = preloadStaticPageForPath(window.location.pathname);
+if (firstPageChunk) {
+  firstPageChunk.then(renderOnce, renderOnce);
+  window.setTimeout(renderOnce, 3000);
+} else {
+  renderOnce();
+}
+
+// Then fetch the remaining info pages in the background once the page has loaded,
+// so navigating to them later is as instant as before.
+const schedulePrefetch = () => {
+  const run = () => prefetchStaticPages();
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(run, { timeout: 4000 });
+  } else {
+    window.setTimeout(run, 2500);
+  }
+};
+if (document.readyState === "complete") {
+  schedulePrefetch();
+} else {
+  window.addEventListener("load", schedulePrefetch, { once: true });
+}

@@ -127,13 +127,13 @@ export default function ShopByAnimal({ add, onToast }) {
             <span className="animal-help-divider" aria-hidden="true" />
 
             {/* Block 2: Call Us */}
-            <a href="tel:+918094721000" className="animal-help-contact-item">
+            <a href="tel:+918094730645" className="animal-help-contact-item">
               <span className="animal-help-icon-circle" aria-hidden="true">
                 <Phone size={17} strokeWidth={2.2} />
               </span>
               <div className="animal-help-contact-text">
                 <small>Call Us</small>
-                <strong>+91 80947 21000</strong>
+                <strong>+91 80947 30645</strong>
               </div>
             </a>
 

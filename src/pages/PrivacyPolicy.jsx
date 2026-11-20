@@ -129,7 +129,7 @@ export default function PrivacyPolicy() {
                 <h2>Information We Collect</h2>
               </div>
               <p>
-                When you interact with the Life Science Pharmaceutical digital platform (accessible at lifesciencepharma.in),
+                When you interact with the Life Science Pharmaceutical digital platform (accessible at lifesciencepharmaceutical.in),
                 we collect only the necessary information to provide genuine veterinary pharmaceuticals, livestock nutrition
                 consultations, and prompt doorstep delivery.
               </p>
@@ -292,7 +292,7 @@ export default function PrivacyPolicy() {
               <div className="legal-contact-box">
                 <span><MapPin size={16} /> <strong>Life Science Pharmaceutical</strong>, 101, Turning Point 1st, Opposite Rosary School, Viman Nagar, Pune, Maharashtra - 411014</span>
                 <span><Mail size={16} /> <strong>Email:</strong> Lifesciencepharmaceutical@gmail.com</span>
-                <span><Phone size={16} /> <strong>Helpline:</strong> +91 80947 21000 (Mon – Sat, 9:00 AM – 6:00 PM IST)</span>
+                <span><Phone size={16} /> <strong>Helpline:</strong> +91 80947 30645 (Mon – Sat, 9:00 AM – 6:00 PM IST)</span>
               </div>
             </section>
           </main>

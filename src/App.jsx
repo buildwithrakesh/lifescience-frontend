@@ -6,19 +6,24 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { ShopProvider, useShop } from "./context/ShopContext";
 import { AdminAuthProvider } from "./admin/AdminAuthContext";
+import RouteSeo from "./seo/RouteSeo";
+import RouteErrorBoundary from "./components/RouteErrorBoundary";
 
-// Core & static storefront pages stay eager for zero-flash instant render on hard refresh
+// Home stays eager for zero-flash instant render on hard refresh.
 import Home from "./pages/Home";
-import ShopByAnimal from "./pages/ShopByAnimal";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
-import FAQPage from "./pages/FAQPage";
-import DistributorPage from "./pages/DistributorPage";
-import KnowledgeCentre from "./pages/KnowledgeCentre";
-import ArticlePage from "./pages/ArticlePage";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import ShippingReturnsPage from "./pages/ShippingReturnsPage";
+// Static storefront pages are code-split but still render with zero flash (see staticPages.jsx).
+import {
+  ShopByAnimal,
+  AboutPage,
+  ContactPage,
+  FAQPage,
+  DistributorPage,
+  KnowledgeCentre,
+  ArticlePage,
+  PrivacyPolicy,
+  TermsAndConditions,
+  ShippingReturnsPage,
+} from "./staticPages";
 
 // Lazy-loaded Overlays (not needed during initial paint)
 const CartDrawer = lazy(() => import("./components/CartDrawer"));
@@ -147,11 +152,14 @@ function MainAppLayout({ showToast, toast }) {
   return (
     <>
       <ScrollToTop />
+      {/* SEO: per-route title/description/canonical/robots (pages may refine it with useSeo) */}
+      <RouteSeo />
       {!isAdminRoute && (
         <Header onOpenCart={() => setIsCartOpen(true)} />
       )}
 
       <main>
+        <RouteErrorBoundary resetKey={location.pathname}>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* ── Admin Panel Routes ── */}
@@ -256,6 +264,7 @@ function MainAppLayout({ showToast, toast }) {
             <Route path="*" element={<Home add={addToCart} onToast={showToast} />} />
           </Routes>
         </Suspense>
+        </RouteErrorBoundary>
       </main>
 
       {!isAdminRoute && <Footer />}

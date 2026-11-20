@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HelpCircle, ChevronDown, ChevronUp, MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { useSeo } from "../seo/useSeo";
+import { faqJsonLd } from "../seo/schemas";
+import { seoForLocation } from "../seo/RouteSeo";
 
 const FAQ_ITEMS = [
   {
@@ -41,18 +44,21 @@ const FAQ_ITEMS = [
   {
     category: "general",
     q: "Can veterinary doctors and large dairy farms order in bulk?",
-    a: "Yes! We offer institutional pricing and bulk pallet supply for commercial dairy farms, veterinary hospitals, and cooperatives. Please contact our institutional desk at +91 80947 21000 or Lifesciencepharmaceutical@gmail.com."
+    a: "Yes! We offer institutional pricing and bulk pallet supply for commercial dairy farms, veterinary hospitals, and cooperatives. Please contact our institutional desk at +91 80947 30645 or Lifesciencepharmaceutical@gmail.com."
   },
   {
     category: "general",
     q: "Do you offer technical veterinary guidance on dosage?",
-    a: "Yes. Our team of experienced veterinary consultants is available on WhatsApp and phone (+91 80947 21000) Monday through Saturday to provide free advice on dosage schedules and herd protocols."
+    a: "Yes. Our team of experienced veterinary consultants is available on WhatsApp and phone (+91 80947 30645) Monday through Saturday to provide free advice on dosage schedules and herd protocols."
   }
 ];
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [openIndices, setOpenIndices] = useState({ 0: true, 1: true });
+
+  // SEO: FAQ structured data (questions & answers) on top of the default /faq tags
+  useSeo({ ...seoForLocation("/faq"), jsonLd: faqJsonLd(FAQ_ITEMS) });
 
   const categories = [
     { id: "all", name: "All Questions" },
@@ -148,7 +154,7 @@ export default function FAQPage() {
               Contact Support <ArrowRight size={15} />
             </Link>
             <a
-              href="https://wa.me/918094721000"
+              href="https://wa.me/918094730645"
               target="_blank"
               rel="noopener noreferrer"
               className="button button-outline"
