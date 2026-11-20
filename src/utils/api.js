@@ -7,10 +7,10 @@ const isLocalhost = typeof window !== "undefined" && (
 
 const envApi = (import.meta.env.VITE_API_URL || "").replace(/\/api\/?$/, "").replace(/\/$/, "");
 
-// In dev (localhost), connect to localhost:5000. In production, ALWAYS use live Render backend URL.
+// In dev (localhost), connect to localhost:5000. In production, ALWAYS use the live Hostycare backend URL.
 export const API_BASE_URL = isLocalhost
   ? (envApi || "http://localhost:5000")
-  : (envApi && !envApi.includes("localhost") ? envApi : "https://lifescience-backend.onrender.com");
+  : (envApi && !envApi.includes("localhost") ? envApi : "https://api.lifesciencepharmaceutical.in");
 
 export const optimizeCloudinaryUrl = (url, width = 1600) => {
   if (!url || typeof url !== "string") return url;

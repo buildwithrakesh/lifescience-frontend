@@ -58,7 +58,7 @@ function seoFiles() {
 
       const { products } = await import("./src/data/products.js");
       const snapshotIds = (products || []).map((p) => p.id || p.slug).filter(Boolean);
-      const apiBase = (process.env.VITE_API_URL || "https://lifescience-backend.onrender.com").replace(/\/api\/?$/, "").replace(/\/+$/, "");
+      const apiBase = (process.env.VITE_API_URL || "https://api.lifesciencepharmaceutical.in").replace(/\/api\/?$/, "").replace(/\/+$/, "");
       const liveIds = apiBase.includes("localhost") ? [] : await liveProductIds(apiBase);
       const productIds = [...new Set([...liveIds, ...snapshotIds])];
 
